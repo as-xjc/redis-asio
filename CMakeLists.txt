@@ -27,7 +27,10 @@ add_library(redis-asio
         src/asyncredis.cpp
         src/asyncredisif.cpp
         src/asyncredissubscriber.cpp
+        src/redis.cpp
         )
+
+target_link_libraries(redis-asio libhiredis.a)
 
 install(TARGETS redis-asio
         LIBRARY DESTINATION lib
